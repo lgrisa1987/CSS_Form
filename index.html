@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <h2>Our Newsletter</h2>
+        <form action="">
+            <div class="inputBox">
+                <input type="text" required class="input">
+                <span>Full Name</span>
+            </div>
+            <div class="inputBox">
+                <input type="email" required class="input">
+                <span>Email Address</span>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Subscribe">
+            </div>
+        </form>
+    </div>
+    <script>
+        /*  const inputs = [...document.getElementsByClassName('input')];
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                if (input.value === "") input.classList.add('move');
+            });
+            input.addEventListener('blur', () => {
+                if (input.value === "") input.classList.remove('move');
+            });
+        }) */
+
+        var inputs = [].slice.call(document.getElementsByClassName('input'));
+
+        inputs.forEach(function (input) {
+            input.addEventListener('focus', function () {
+                if (input.value === "") input.classList.add('move');
+            });
+            input.addEventListener('blur', function () {
+                if (input.value === "") input.classList.remove('move');
+            });
+        });
+    </script>
+</body>
+
+</html>
